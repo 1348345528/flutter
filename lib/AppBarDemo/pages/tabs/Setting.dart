@@ -12,7 +12,7 @@ class _SettingPageState extends State<SettingPage> {
     return Column(
       children: <Widget>[
         Column(
-          children: [
+          children: <Widget>[
             ListTile(
               title: Text("我是一个文本"),
             ),
@@ -26,19 +26,6 @@ class _SettingPageState extends State<SettingPage> {
               title: Text("我是一个文本"),
             )
           ],
-
-        ),
-        RaisedButton(
-          child: Text("跳转到登录页面"),
-          onPressed: (){
-              Navigator.pushNamed(context, '/login');
-          },
-        ),
-        RaisedButton(
-          child: Text("跳转到注册页面"),
-          onPressed: (){
-            Navigator.pushNamed(context, '/registerFirst');
-          },
         )
       ],
     );

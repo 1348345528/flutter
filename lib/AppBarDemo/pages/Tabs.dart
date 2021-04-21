@@ -5,19 +5,19 @@ import 'tabs/Category.dart';
 import 'tabs/Setting.dart';
 
 class Tabs extends StatefulWidget {
-  final index ;
+  final index;
+  Tabs({Key key,this.index=0}) : super(key: key);
 
-  Tabs({this.index = 0});
-
-  _TabsState createState() => _TabsState(index);
+  _TabsState createState() => _TabsState(this.index);
 }
 
 class _TabsState extends State<Tabs> {
 
-  int _currentIndex=0;
+  int _currentIndex;
   _TabsState(index){
-    this._currentIndex = index;
+    this._currentIndex=index;
   }
+
   List _pageList=[
     HomePage(),
     CategoryPage(),
@@ -26,9 +26,9 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter Demo"),
-        ),
+        // appBar: AppBar(
+        //   title: Text("Flutter Demo"),
+        // ),
         body: this._pageList[this._currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: this._currentIndex,   //配置对应的索引值选中
@@ -43,17 +43,16 @@ class _TabsState extends State<Tabs> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label:"首页"
-              
+              label:"首页"               
             ),
              BottomNavigationBarItem(
               icon: Icon(Icons.category),
-               label:"分类"
+              label: "分类",              
             ),
             
              BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: "设置"
+              label: "设置",              
             )
           ],
         ),
