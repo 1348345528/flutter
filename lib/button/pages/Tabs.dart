@@ -30,6 +30,28 @@ class _TabsState extends State<Tabs> {
           title: Text("Flutter App"),
         ),
         body: this._pageList[this._currentIndex],
+        floatingActionButton: Container(
+          height: 80,
+          width: 80,
+          padding: EdgeInsets.all(8),
+          margin: EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(
+              color: Colors.white,
+            borderRadius: BorderRadius.circular(40)
+          ),
+
+          child:  FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: (){
+              setState(() {
+                this._currentIndex= 2;
+              });
+              print('FloatingActionButton');
+            },
+            backgroundColor: this._currentIndex==2?Colors.red:Colors.blue,
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: this._currentIndex,   //配置对应的索引值选中
           onTap: (int index){
@@ -49,7 +71,14 @@ class _TabsState extends State<Tabs> {
               icon: Icon(Icons.category),
               label: "分类"
             ),
-            
+            BottomNavigationBarItem(
+                icon: Icon(Icons.add),
+                label: "添加"
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.message),
+                label: "消息"
+            ),
              BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: "设置"

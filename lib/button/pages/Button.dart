@@ -22,6 +22,14 @@ class ButtonDemoPage extends StatelessWidget {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add,color: Colors.blue,size: 30),
+        backgroundColor: Colors.lightGreen,
+        onPressed: (){
+          print('FloatingActionButton');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
