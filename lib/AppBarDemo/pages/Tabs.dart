@@ -56,6 +56,57 @@ class _TabsState extends State<Tabs> {
             )
           ],
         ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Row(
+              children:[
+                Expanded(
+                  child: DrawerHeader(
+                    child: UserAccountsDrawerHeader(
+                      accountName: Text("马云"),
+                      accountEmail: Text('alibaba.com'),
+                      currentAccountPicture: CircleAvatar(
+                          backgroundImage: NetworkImage("https://www.itying.com/images/flutter/3.png")
+                      ),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: NetworkImage("https://www.itying.com/images/flutter/1.png"),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.home),
+              ),
+              title: Text("我的空间"),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.people),
+              ),
+              title: Text("用户中心"),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.settings),
+              ),
+              title: Text("设置"),
+            ),
+            Divider(),
+          ],
+        ),
+      ),
+      endDrawer: Drawer(
+        child: Text("右侧侧边栏"),
+      ),
       );
   }
 }

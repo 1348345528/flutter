@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app2/AppBarDemo/pages/TabController.dart';
 
 import '../pages/Tabs.dart';
-import '../pages/AppBarDemo.dart';
 
+import '../pages/User.dart';
 //配置路由
 final routes={
       '/':(context)=>Tabs(),
-      '/appBarDemo':(context)=>AppBarDemoPage(),
-      '/tabBarController':(context)=>TabBarControllerPage()
+      '/user':(context)=>UserPage(),
 };
 
 //固定写法
