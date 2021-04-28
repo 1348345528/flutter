@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_app2/MyApp.dart';
-
-import 'Image.dart';
+import 'dart:convert';
 
 main(){
-  runApp(Images());
+  var map = {"name":"张三","age":"20"};
+  var json = "{'name':'李四','age':'20'}";
+  print(jsonDecode(json));
+  print(jsonEncode(map));
 }
 
